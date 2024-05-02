@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc"
+  },
+  "type": "module",
+  "dependencies": {
+    "@hono/node-server": "^1.11.1",
+    "hono": "^4.2.9",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.5"
+  }
+}
