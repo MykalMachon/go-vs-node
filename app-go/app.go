@@ -19,6 +19,12 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	// should speed it up :)
+	// https://stackoverflow.com/questions/1711631/improve-insert-per-second-performance-of-sqlite
+	_, err = db.Exec("PRAGMA synchronous = OFF")
+	if err != nil {
+		log.Fatal(err)
+	}
 	defer db.Close()
 
 	log.Printf("Creating posts table...")
