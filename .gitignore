@@ -1,1 +1,6 @@
+# databases
 *.db
+
+# dist
+app-go/go-app
+app-node/dist/
