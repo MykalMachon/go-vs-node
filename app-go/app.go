@@ -60,8 +60,6 @@ func main() {
 			return
 		}
 
-		log.Printf("title: %s content: %s", title, content)
-
 		// Insert the post into the database
 		_, err = db.Exec("INSERT INTO posts (title, content) VALUES (?, ?)", title, content)
 		if err != nil {
