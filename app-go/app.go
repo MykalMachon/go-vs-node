@@ -21,6 +21,13 @@ func main() {
 	}
 	defer db.Close()
 
+	// optimizing SQLite database file
+	log.Printf("Optimizing SQLite connection...")
+	_, err = db.Exec(`PRAGMA journal_mode=WAL;`)
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	log.Printf("Creating posts table...")
 	// Create the posts table if it doesn't exist
 	createTableSQL := `
